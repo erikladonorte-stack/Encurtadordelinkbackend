@@ -18,12 +18,17 @@
   "license": "ISC",
   "author": "Erik Menezes",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "start": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js",
+    "openapi": "node ./src/scripts/generate-openapi.js",
+    "openapi:Link": "npx @redocly/cli link ./src/docs/openapi.json"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "swagger-jsdoc": "^6.3.0",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
